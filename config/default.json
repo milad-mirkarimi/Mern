@@ -1,3 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://milad123:Password123@devconnector-8gydj.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://milad123:Password123@devconnector-8gydj.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "mysecrettoken"
 }
