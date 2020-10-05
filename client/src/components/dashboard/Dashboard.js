@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
-import { getCurrentProfile } from '../../actions/profile';
 import DashboardActions from './DashboardActions';
+import Experience from './Experience';
+import Education from './Education';
+import { getCurrentProfile } from '../../actions/profile';
 
 const Dashboard = (props) => {
     useEffect(() => {
@@ -15,9 +17,11 @@ const Dashboard = (props) => {
         <p className="lead">
             <i className="fas fa-user"></i> Welcome {props.auth.user && props.auth.user.name}
         </p>
-        {props.profile !== null ? (
+        {props.profile.profile !== null ? (
             <Fragment>
                 <DashboardActions />
+                <Experience experience={props.profile.profile.experience} />
+                <Education education={props.profile.profile.education} />
             </Fragment>) : (
                 <Fragment>
                     <p>You have not yet setup a profile, please add some info</p>
